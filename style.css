@@ -1,0 +1,543 @@
+/* ===========================================================
+   NORA ASHWORTH
+   Premium Author Website
+   Version 1.0
+=========================================================== */
+
+:root{
+
+--bg:#f7f5f0;
+--surface:#ffffff;
+--text:#202020;
+--text-light:#666666;
+
+--primary:#b48a3c;
+--primary-dark:#8c6a2e;
+
+--border:#e6e2da;
+
+--shadow:0 20px 60px rgba(0,0,0,.08);
+
+--radius:18px;
+
+--transition:.35s cubic-bezier(.4,0,.2,1);
+
+--max-width:1280px;
+
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+
+scroll-behavior:smooth;
+
+}
+
+body{
+
+font-family:"Inter",sans-serif;
+
+background:var(--bg);
+
+color:var(--text);
+
+overflow-x:hidden;
+
+line-height:1.8;
+
+}
+
+img{
+
+max-width:100%;
+
+display:block;
+
+}
+
+a{
+
+text-decoration:none;
+
+color:inherit;
+
+transition:var(--transition);
+
+}
+
+ul{
+
+list-style:none;
+
+}
+
+section{
+
+padding:110px 30px;
+
+}
+
+.container{
+
+width:100%;
+
+max-width:var(--max-width);
+
+margin:auto;
+
+}
+
+/* ===========================
+        NAVBAR
+=========================== */
+
+.navbar{
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+padding:22px 60px;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+z-index:999;
+
+transition:.4s;
+
+background:rgba(255,255,255,.08);
+
+backdrop-filter:blur(18px);
+
+}
+
+.navbar.scrolled{
+
+background:white;
+
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+}
+
+.logo{
+
+font-family:"Cormorant Garamond",serif;
+
+font-size:34px;
+
+font-weight:700;
+
+letter-spacing:2px;
+
+}
+
+.navbar ul{
+
+display:flex;
+
+gap:38px;
+
+}
+
+.navbar a{
+
+font-size:15px;
+
+font-weight:500;
+
+position:relative;
+
+}
+
+.navbar a::after{
+
+content:"";
+
+position:absolute;
+
+bottom:-6px;
+
+left:0;
+
+width:0;
+
+height:2px;
+
+background:var(--primary);
+
+transition:.3s;
+
+}
+
+.navbar a:hover::after{
+
+width:100%;
+
+}
+
+/* ===========================
+         HERO
+=========================== */
+
+.hero{
+
+height:100vh;
+
+position:relative;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+text-align:center;
+
+background:url("images/hero/hero.webp") center center/cover no-repeat;
+
+overflow:hidden;
+
+}
+
+.overlay{
+
+position:absolute;
+
+inset:0;
+
+background:linear-gradient(
+
+180deg,
+
+rgba(0,0,0,.35),
+
+rgba(0,0,0,.55)
+
+);
+
+}
+
+.hero-content{
+
+position:relative;
+
+z-index:2;
+
+color:white;
+
+max-width:900px;
+
+padding:20px;
+
+animation:fadeUp 1.2s ease;
+
+}
+
+.hero h1{
+
+font-family:"Cormorant Garamond",serif;
+
+font-size:90px;
+
+font-weight:700;
+
+letter-spacing:8px;
+
+margin-bottom:18px;
+
+}
+
+.hero p{
+
+font-size:24px;
+
+font-weight:300;
+
+margin-bottom:40px;
+
+opacity:.95;
+
+}
+
+.button{
+
+display:inline-block;
+
+padding:18px 42px;
+
+background:var(--primary);
+
+border-radius:999px;
+
+color:white;
+
+font-weight:600;
+
+letter-spacing:1px;
+
+transition:.3s;
+
+}
+
+.button:hover{
+
+background:var(--primary-dark);
+
+transform:translateY(-3px);
+
+box-shadow:0 15px 35px rgba(0,0,0,.25);
+
+}
+
+/* ===========================
+      TITLES
+=========================== */
+
+h2{
+
+font-family:"Cormorant Garamond",serif;
+
+font-size:54px;
+
+font-weight:700;
+
+margin-bottom:20px;
+
+text-align:center;
+
+}
+
+.section-subtitle{
+
+max-width:720px;
+
+margin:0 auto 70px;
+
+text-align:center;
+
+color:var(--text-light);
+
+font-size:18px;
+
+}
+
+/* ===========================
+        CARDS
+=========================== */
+
+.card{
+
+background:white;
+
+border-radius:var(--radius);
+
+box-shadow:var(--shadow);
+
+overflow:hidden;
+
+transition:.4s;
+
+}
+
+.card:hover{
+
+transform:translateY(-12px);
+
+}
+
+.card img{
+
+width:100%;
+
+height:420px;
+
+object-fit:cover;
+
+}
+
+.card-body{
+
+padding:30px;
+
+}
+
+.card h3{
+
+font-family:"Cormorant Garamond",serif;
+
+font-size:34px;
+
+margin-bottom:14px;
+
+}
+
+.card p{
+
+color:var(--text-light);
+
+margin-bottom:24px;
+
+}
+
+/* ===========================
+      FOOTER
+=========================== */
+
+footer{
+
+background:#111;
+
+color:white;
+
+padding:60px 20px;
+
+text-align:center;
+
+}
+
+footer p{
+
+opacity:.8;
+
+}
+
+/* ===========================
+      ANIMATIONS
+=========================== */
+
+@keyframes fadeUp{
+
+from{
+
+opacity:0;
+
+transform:translateY(40px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+/* ===========================
+      RESPONSIVE
+=========================== */
+
+@media(max-width:1000px){
+
+.hero h1{
+
+font-size:62px;
+
+}
+
+.navbar{
+
+padding:18px 25px;
+
+}
+
+.navbar ul{
+
+gap:20px;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.hero{
+
+padding:0 20px;
+
+}
+
+.hero h1{
+
+font-size:48px;
+
+letter-spacing:3px;
+
+}
+
+.hero p{
+
+font-size:18px;
+
+}
+
+.navbar{
+
+flex-direction:column;
+
+gap:15px;
+
+padding:18px;
+
+}
+
+.navbar ul{
+
+flex-wrap:wrap;
+
+justify-content:center;
+
+gap:15px;
+
+}
+
+section{
+
+padding:80px 20px;
+
+}
+
+h2{
+
+font-size:42px;
+
+}
+
+}
+
+@media(max-width:480px){
+
+.hero h1{
+
+font-size:38px;
+
+}
+
+.logo{
+
+font-size:28px;
+
+}
+
+.button{
+
+padding:15px 32px;
+
+}
+
+}
