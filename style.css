@@ -1117,3 +1117,501 @@ gap:40px;
 }
 
 }
+
+/* =====================================================
+   ABOUT
+===================================================== */
+
+.about{
+
+padding:140px 0;
+
+background:#ffffff;
+
+}
+
+.about-grid{
+
+display:grid;
+
+grid-template-columns:480px 1fr;
+
+gap:90px;
+
+align-items:center;
+
+}
+
+.about-image{
+
+position:relative;
+
+}
+
+.about-image img{
+
+width:100%;
+
+border-radius:24px;
+
+box-shadow:0 40px 80px rgba(0,0,0,.12);
+
+transition:.5s;
+
+}
+
+.about-image:hover img{
+
+transform:scale(1.02);
+
+}
+
+.about-image::before{
+
+content:"";
+
+position:absolute;
+
+top:-25px;
+
+left:-25px;
+
+width:160px;
+
+height:160px;
+
+border:2px solid var(--primary);
+
+border-radius:24px;
+
+z-index:-1;
+
+}
+
+.section-tag{
+
+display:inline-block;
+
+padding:8px 18px;
+
+background:rgba(184,146,70,.12);
+
+color:var(--primary);
+
+font-size:13px;
+
+font-weight:700;
+
+letter-spacing:2px;
+
+border-radius:40px;
+
+margin-bottom:20px;
+
+}
+
+.about-content h2{
+
+font-size:64px;
+
+line-height:1.1;
+
+margin-bottom:30px;
+
+}
+
+.about-content p{
+
+font-size:18px;
+
+color:#666;
+
+margin-bottom:24px;
+
+max-width:700px;
+
+}
+
+/* =====================================================
+FEATURED
+===================================================== */
+
+.featured{
+
+padding:140px 0;
+
+background:#f6f3ee;
+
+}
+
+.featured-grid{
+
+display:grid;
+
+grid-template-columns:520px 1fr;
+
+gap:90px;
+
+align-items:center;
+
+}
+
+.featured-book{
+
+overflow:hidden;
+
+border-radius:24px;
+
+}
+
+.featured-book img{
+
+width:100%;
+
+display:block;
+
+transition:.7s;
+
+box-shadow:0 35px 80px rgba(0,0,0,.15);
+
+}
+
+.featured-book:hover img{
+
+transform:scale(1.04);
+
+}
+
+.featured-content h2{
+
+font-size:58px;
+
+margin:25px 0;
+
+line-height:1.1;
+
+}
+
+.featured-content p{
+
+font-size:19px;
+
+color:#666;
+
+margin-bottom:40px;
+
+}
+
+/* =====================================================
+BOOKS
+===================================================== */
+
+.books{
+
+padding:140px 0;
+
+background:white;
+
+}
+
+.books h2{
+
+text-align:center;
+
+margin-bottom:20px;
+
+}
+
+.section-description{
+
+text-align:center;
+
+color:#777;
+
+max-width:700px;
+
+margin:auto;
+
+margin-bottom:80px;
+
+}
+
+.center{
+
+display:table;
+
+margin:auto;
+
+margin-bottom:20px;
+
+}
+
+.books-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+
+gap:45px;
+
+}
+
+.book{
+
+background:white;
+
+border-radius:22px;
+
+overflow:hidden;
+
+box-shadow:0 20px 45px rgba(0,0,0,.08);
+
+transition:.45s;
+
+}
+
+.book:hover{
+
+transform:translateY(-10px);
+
+box-shadow:0 35px 70px rgba(0,0,0,.16);
+
+}
+
+.book img{
+
+width:100%;
+
+height:430px;
+
+object-fit:cover;
+
+transition:.7s;
+
+}
+
+.book:hover img{
+
+transform:scale(1.06);
+
+}
+
+.book-info{
+
+padding:28px;
+
+}
+
+.book-info h3{
+
+font-size:34px;
+
+margin-bottom:15px;
+
+}
+
+.book-info p{
+
+color:#666;
+
+margin-bottom:25px;
+
+}
+
+/* =====================================================
+NEWSLETTER
+===================================================== */
+
+.newsletter{
+
+padding:130px 0;
+
+background:#151515;
+
+color:white;
+
+text-align:center;
+
+}
+
+.newsletter h2{
+
+color:white;
+
+margin-bottom:20px;
+
+}
+
+.newsletter p{
+
+max-width:700px;
+
+margin:auto;
+
+opacity:.8;
+
+margin-bottom:45px;
+
+}
+
+.newsletter form{
+
+display:flex;
+
+justify-content:center;
+
+gap:18px;
+
+flex-wrap:wrap;
+
+}
+
+.newsletter input{
+
+width:420px;
+
+padding:18px 22px;
+
+border:none;
+
+border-radius:50px;
+
+font-size:16px;
+
+}
+
+.newsletter button{
+
+padding:18px 40px;
+
+border:none;
+
+border-radius:50px;
+
+background:var(--primary);
+
+color:white;
+
+font-weight:700;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+.newsletter button:hover{
+
+background:var(--primary-dark);
+
+}
+
+/* =====================================================
+CONTACT
+===================================================== */
+
+.contact{
+
+padding:120px 0;
+
+background:#fafafa;
+
+}
+
+.contact-grid{
+
+display:grid;
+
+grid-template-columns:1fr auto;
+
+gap:60px;
+
+align-items:center;
+
+}
+
+.contact h2{
+
+margin-bottom:20px;
+
+}
+
+.contact p{
+
+color:#666;
+
+font-size:18px;
+
+}
+
+/* =====================================================
+RESPONSIVE
+===================================================== */
+
+@media(max-width:1000px){
+
+.about-grid,
+
+.featured-grid{
+
+grid-template-columns:1fr;
+
+text-align:center;
+
+}
+
+.about-content h2,
+
+.featured-content h2{
+
+font-size:46px;
+
+}
+
+.contact-grid{
+
+grid-template-columns:1fr;
+
+text-align:center;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.about,
+
+.featured,
+
+.books,
+
+.newsletter,
+
+.contact{
+
+padding:90px 25px;
+
+}
+
+.about-content h2,
+
+.featured-content h2{
+
+font-size:38px;
+
+}
+
+.book img{
+
+height:360px;
+
+}
+
+.newsletter input{
+
+width:100%;
+
+}
+
+}
