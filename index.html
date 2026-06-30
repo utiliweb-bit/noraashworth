@@ -645,8 +645,8 @@ footer{background:var(--navy);padding:4rem 2rem 2rem;border-top:1px solid rgba(2
         </ul>
         <h4 style="margin-top:1.5rem">Legal</h4>
         <ul>
-          <li><a href="#" onclick="return false;" style="cursor:default">Privacy Policy</a></li>
-          <li><a href="#" onclick="return false;" style="cursor:default">Terms of Service</a></li>
+          <li><a href="#" onclick="document.getElementById('privacyModal').style.display='flex';return false;" style="cursor:pointer">Privacy Policy</a></li>
+          <li><a href="#" onclick="document.getElementById('termsModal').style.display='flex';return false;" style="cursor:pointer">Terms of Service</a></li>
         </ul>
       </div>
     </div>
@@ -656,6 +656,31 @@ footer{background:var(--navy);padding:4rem 2rem 2rem;border-top:1px solid rgba(2
     </div>
   </div>
 </footer>
+
+<!-- PRIVACY POLICY MODAL -->
+<div id="privacyModal" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.7);align-items:center;justify-content:center;">
+  <div style="background:#fff;border-radius:12px;padding:2rem 2.5rem;max-width:520px;width:90%;max-height:80vh;overflow-y:auto;box-shadow:0 24px 64px rgba(0,0,0,0.3);">
+    <p style="font-family:'Playfair Display',serif;font-size:1.3rem;color:#0F1923;margin-bottom:1rem;">Privacy Policy</p>
+    <p style="font-size:0.85rem;color:#4A4540;line-height:1.8;margin-bottom:0.8rem;">Your privacy is important to us. This website does not collect, store, or share any personal information without your consent.</p>
+    <p style="font-size:0.85rem;color:#4A4540;line-height:1.8;margin-bottom:0.8rem;"><strong>Newsletter:</strong> If you choose to subscribe to our newsletter, your email address will be used solely to send you updates about new releases and exclusive content. We will never share your email with third parties.</p>
+    <p style="font-size:0.85rem;color:#4A4540;line-height:1.8;margin-bottom:0.8rem;"><strong>External Links:</strong> This site contains links to third-party websites (Amazon, TikTok). We are not responsible for the privacy practices of those sites.</p>
+    <p style="font-size:0.85rem;color:#4A4540;line-height:1.8;margin-bottom:1.2rem;"><strong>Contact:</strong> For any privacy-related questions, please reach out via our contact section.</p>
+    <button onclick="document.getElementById('privacyModal').style.display='none'" style="background:none;border:1px solid #ddd;border-radius:4px;padding:0.5rem 1.5rem;font-size:0.82rem;color:#7A746E;cursor:pointer;">Close</button>
+  </div>
+</div>
+
+<!-- TERMS OF SERVICE MODAL -->
+<div id="termsModal" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.7);align-items:center;justify-content:center;">
+  <div style="background:#fff;border-radius:12px;padding:2rem 2.5rem;max-width:520px;width:90%;max-height:80vh;overflow-y:auto;box-shadow:0 24px 64px rgba(0,0,0,0.3);">
+    <p style="font-family:'Playfair Display',serif;font-size:1.3rem;color:#0F1923;margin-bottom:1rem;">Terms of Service</p>
+    <p style="font-size:0.85rem;color:#4A4540;line-height:1.8;margin-bottom:0.8rem;">By accessing and using this website, you agree to the following terms and conditions.</p>
+    <p style="font-size:0.85rem;color:#4A4540;line-height:1.8;margin-bottom:0.8rem;"><strong>Content:</strong> All content on this website — including text, images, and design — is the intellectual property of Nora Ashworth and may not be reproduced without permission.</p>
+    <p style="font-size:0.85rem;color:#4A4540;line-height:1.8;margin-bottom:0.8rem;"><strong>Books:</strong> Book purchases are handled through Amazon. All transactions are subject to Amazon's own terms and conditions.</p>
+    <p style="font-size:0.85rem;color:#4A4540;line-height:1.8;margin-bottom:0.8rem;"><strong>Newsletter:</strong> You may unsubscribe from our newsletter at any time by following the unsubscribe link included in every email.</p>
+    <p style="font-size:0.85rem;color:#4A4540;line-height:1.8;margin-bottom:1.2rem;"><strong>Changes:</strong> We reserve the right to update these terms at any time. Continued use of the website constitutes acceptance of any revised terms.</p>
+    <button onclick="document.getElementById('termsModal').style.display='none'" style="background:none;border:1px solid #ddd;border-radius:4px;padding:0.5rem 1.5rem;font-size:0.82rem;color:#7A746E;cursor:pointer;">Close</button>
+  </div>
+</div>
 
 <!-- TIKTOK MODAL -->
 <div id="tiktokModal" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.7);align-items:center;justify-content:center;">
