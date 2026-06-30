@@ -315,6 +315,12 @@ footer{background:var(--navy);padding:4rem 2rem 2rem;border-top:1px solid rgba(2
 @media(max-width:380px){
   .books-grid{grid-template-columns:1fr}
 }
+
+/* ── REVEAL ON SCROLL ── */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity 0.6s ease,transform 0.6s ease}
+.reveal.visible{opacity:1;transform:none}
+.reveal-delay-1{transition-delay:0.15s}
+.reveal-delay-2{transition-delay:0.3s}
 </style>
 </head>
 <body>
@@ -578,19 +584,7 @@ footer{background:var(--navy);padding:4rem 2rem 2rem;border-top:1px solid rgba(2
   </div>
 </section>
 
-<!-- NEWSLETTER -->
-<section id="newsletter" class="newsletter-section">
-  <div class="container reveal">
-    <div class="section-eyebrow" style="justify-content:center">Newsletter</div>
-    <h2 class="section-title">Join My <em>Readers</em></h2>
-    <p>New releases, writing insights, and exclusive content — direct to your inbox.</p>
-    <div class="newsletter-form">
-      <input type="email" placeholder="Your email address" />
-      <button class="btn-gold" type="submit">Subscribe</button>
-    </div>
-    <p class="newsletter-note">We respect your privacy. Unsubscribe at any time.</p>
-  </div>
-</section>
+
 
 <!-- CONTACT -->
 <section id="contact" style="background:var(--ivory)">
@@ -641,7 +635,7 @@ footer{background:var(--navy);padding:4rem 2rem 2rem;border-top:1px solid rgba(2
         <h4>Connect</h4>
         <ul>
           <li><a href="#" onclick="openTikTokModal();return false;">TikTok</a></li>
-          <li><a href="#" onclick="document.getElementById('newsletter').scrollIntoView({behavior:'smooth'});return false;">Newsletter</a></li>
+          
         </ul>
         <h4 style="margin-top:1.5rem">Legal</h4>
         <ul>
@@ -661,10 +655,12 @@ footer{background:var(--navy);padding:4rem 2rem 2rem;border-top:1px solid rgba(2
 <div id="privacyModal" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.7);align-items:center;justify-content:center;">
   <div style="background:#fff;border-radius:12px;padding:2rem 2.5rem;max-width:520px;width:90%;max-height:80vh;overflow-y:auto;box-shadow:0 24px 64px rgba(0,0,0,0.3);">
     <p style="font-family:'Playfair Display',serif;font-size:1.3rem;color:#0F1923;margin-bottom:1rem;">Privacy Policy</p>
-    <p style="font-size:0.85rem;color:#4A4540;line-height:1.8;margin-bottom:0.8rem;">Your privacy is important to us. This website does not collect, store, or share any personal information without your consent.</p>
-    <p style="font-size:0.85rem;color:#4A4540;line-height:1.8;margin-bottom:0.8rem;"><strong>Newsletter:</strong> If you choose to subscribe to our newsletter, your email address will be used solely to send you updates about new releases and exclusive content. We will never share your email with third parties.</p>
-    <p style="font-size:0.85rem;color:#4A4540;line-height:1.8;margin-bottom:0.8rem;"><strong>External Links:</strong> This site contains links to third-party websites (Amazon, TikTok). We are not responsible for the privacy practices of those sites.</p>
-    <p style="font-size:0.85rem;color:#4A4540;line-height:1.8;margin-bottom:1.2rem;"><strong>Contact:</strong> For any privacy-related questions, please reach out via our contact section.</p>
+    <p style="font-size:0.85rem;color:#4A4540;line-height:1.8;margin-bottom:0.8rem;">This Privacy Policy explains how this website collects and uses information when you visit <strong>noraashworth.com</strong>. By using this site, you agree to the practices described here. This policy was last updated on June 2026.</p>
+    <p style="font-size:0.85rem;color:#4A4540;line-height:1.8;margin-bottom:0.8rem;"><strong>Information We Collect</strong><br>This website does not collect personally identifiable information unless you voluntarily provide it. We may collect non-personal data such as browser type, pages visited, and time spent on the site through standard server logs or analytics tools, solely to improve the website experience.</p>
+    <p style="font-size:0.85rem;color:#4A4540;line-height:1.8;margin-bottom:0.8rem;"><strong>External Links</strong><br>This site contains links to third-party platforms including Amazon and TikTok. Once you leave this website, we have no control over and bear no responsibility for the content or privacy practices of those sites. We encourage you to review their respective privacy policies.</p>
+    <p style="font-size:0.85rem;color:#4A4540;line-height:1.8;margin-bottom:0.8rem;"><strong>Cookies</strong><br>This website may use essential cookies to ensure basic functionality. No tracking or advertising cookies are placed without your consent.</p>
+    <p style="font-size:0.85rem;color:#4A4540;line-height:1.8;margin-bottom:0.8rem;"><strong>Children's Privacy</strong><br>This website is not directed to children under the age of 13. We do not knowingly collect personal information from minors.</p>
+    <p style="font-size:0.85rem;color:#4A4540;line-height:1.8;margin-bottom:1.2rem;"><strong>Contact</strong><br>For any privacy-related questions or requests, please reach out via the contact section on this website.</p>
     <button onclick="document.getElementById('privacyModal').style.display='none'" style="background:none;border:1px solid #ddd;border-radius:4px;padding:0.5rem 1.5rem;font-size:0.82rem;color:#7A746E;cursor:pointer;">Close</button>
   </div>
 </div>
@@ -673,11 +669,13 @@ footer{background:var(--navy);padding:4rem 2rem 2rem;border-top:1px solid rgba(2
 <div id="termsModal" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.7);align-items:center;justify-content:center;">
   <div style="background:#fff;border-radius:12px;padding:2rem 2.5rem;max-width:520px;width:90%;max-height:80vh;overflow-y:auto;box-shadow:0 24px 64px rgba(0,0,0,0.3);">
     <p style="font-family:'Playfair Display',serif;font-size:1.3rem;color:#0F1923;margin-bottom:1rem;">Terms of Service</p>
-    <p style="font-size:0.85rem;color:#4A4540;line-height:1.8;margin-bottom:0.8rem;">By accessing and using this website, you agree to the following terms and conditions.</p>
-    <p style="font-size:0.85rem;color:#4A4540;line-height:1.8;margin-bottom:0.8rem;"><strong>Content:</strong> All content on this website — including text, images, and design — is the intellectual property of Nora Ashworth and may not be reproduced without permission.</p>
-    <p style="font-size:0.85rem;color:#4A4540;line-height:1.8;margin-bottom:0.8rem;"><strong>Books:</strong> Book purchases are handled through Amazon. All transactions are subject to Amazon's own terms and conditions.</p>
-    <p style="font-size:0.85rem;color:#4A4540;line-height:1.8;margin-bottom:0.8rem;"><strong>Newsletter:</strong> You may unsubscribe from our newsletter at any time by following the unsubscribe link included in every email.</p>
-    <p style="font-size:0.85rem;color:#4A4540;line-height:1.8;margin-bottom:1.2rem;"><strong>Changes:</strong> We reserve the right to update these terms at any time. Continued use of the website constitutes acceptance of any revised terms.</p>
+    <p style="font-size:0.85rem;color:#4A4540;line-height:1.8;margin-bottom:0.8rem;">By accessing and using this website, you agree to be bound by the following terms. If you do not agree, please discontinue use of this site. These terms were last updated on June 2026.</p>
+    <p style="font-size:0.85rem;color:#4A4540;line-height:1.8;margin-bottom:0.8rem;"><strong>Use of Content</strong><br>All content on this website — including text, cover images, author photographs, and design — is the intellectual property of Nora Ashworth and is protected under applicable copyright law. You may not reproduce, distribute, or create derivative works from any content on this site without prior written permission.</p>
+    <p style="font-size:0.85rem;color:#4A4540;line-height:1.8;margin-bottom:0.8rem;"><strong>Book Purchases</strong><br>Books are sold through Amazon Kindle. All purchases, transactions, and related disputes are governed solely by Amazon's own terms and conditions. Nora Ashworth is not a party to any such transactions.</p>
+    <p style="font-size:0.85rem;color:#4A4540;line-height:1.8;margin-bottom:0.8rem;"><strong>Disclaimer</strong><br>This website is provided "as is" without warranties of any kind. We do not guarantee that the site will be uninterrupted, error-free, or free of viruses. Use of this site is at your own risk.</p>
+    <p style="font-size:0.85rem;color:#4A4540;line-height:1.8;margin-bottom:0.8rem;"><strong>External Links</strong><br>Links to third-party websites are provided for convenience only. We are not responsible for the content, availability, or practices of those sites.</p>
+    <p style="font-size:0.85rem;color:#4A4540;line-height:1.8;margin-bottom:0.8rem;"><strong>Governing Law</strong><br>These terms are governed by applicable law. Any disputes arising from the use of this website shall be resolved in the appropriate jurisdiction.</p>
+    <p style="font-size:0.85rem;color:#4A4540;line-height:1.8;margin-bottom:1.2rem;"><strong>Changes to These Terms</strong><br>We reserve the right to update these terms at any time. Continued use of the website after any changes constitutes your acceptance of the revised terms.</p>
     <button onclick="document.getElementById('termsModal').style.display='none'" style="background:none;border:1px solid #ddd;border-radius:4px;padding:0.5rem 1.5rem;font-size:0.82rem;color:#7A746E;cursor:pointer;">Close</button>
   </div>
 </div>
@@ -701,7 +699,7 @@ function openTikTokModal() {
 }
 function closeTikTokModal() {
   document.getElementById('tiktokModal').style.display = 'none';
-  document.getElementById('copyBtn').textContent = 'Copiar';
+  document.getElementById('copyBtn').textContent = 'Copy';
 }
 function copyTikTok() {
   navigator.clipboard.writeText('https://www.tiktok.com/@noraashworth').then(function() {
