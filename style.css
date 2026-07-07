@@ -64,6 +64,7 @@ nav.scrolled{background:rgba(15,25,35,0.97);backdrop-filter:blur(12px);box-shado
   content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;
   background:repeating-linear-gradient(45deg,transparent,transparent 60px,rgba(201,168,76,0.3) 60px,rgba(201,168,76,0.3) 61px);
 }
+.hero-particles{position:absolute;inset:0;z-index:1;width:100%;height:100%;pointer-events:none}
 .hero-content{
   position:relative;z-index:2;text-align:center;max-width:760px;padding:2rem;
   animation:fadeUp 1s ease both;
@@ -83,13 +84,16 @@ nav.scrolled{background:rgba(15,25,35,0.97);backdrop-filter:blur(12px);box-shado
 .hero p{color:rgba(255,255,255,0.7);font-size:clamp(1rem,2vw,1.2rem);font-weight:300;line-height:1.8;max-width:520px;margin:0 auto 3rem}
 .hero-ctas{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
 .btn-gold{
+  position:relative;overflow:hidden;
   display:inline-flex;align-items:center;gap:0.5rem;
-  background:var(--gold);color:#fff;padding:1rem 2.2rem;
+  background:linear-gradient(120deg,var(--gold) 0%,var(--gold-light) 50%,var(--gold) 100%);
+  background-size:220% 100%;background-position:0% 0%;
+  color:#fff;padding:1rem 2.2rem;
   font-size:0.82rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;
   border:none;border-radius:4px;cursor:pointer;text-decoration:none;
-  transition:background 0.25s,transform 0.25s,box-shadow 0.25s;
+  transition:background-position 0.6s ease,transform 0.25s,box-shadow 0.25s;
 }
-.btn-gold:hover{background:#a87c2a;transform:translateY(-3px);box-shadow:0 10px 28px rgba(201,168,76,0.4)}
+.btn-gold:hover{background-position:100% 0%;transform:translateY(-3px);box-shadow:0 10px 28px rgba(201,168,76,0.4)}
 .btn-outline{
   display:inline-flex;align-items:center;gap:0.5rem;
   background:transparent;color:#fff;padding:1rem 2.2rem;
@@ -182,9 +186,10 @@ section{padding:7rem 2rem}
   transition:transform 0.4s,border-color 0.4s,box-shadow 0.4s;
 }
 .book-card:hover{transform:translateY(-8px);border-color:rgba(201,168,76,0.5);box-shadow:0 24px 60px rgba(0,0,0,0.4)}
-.book-cover{position:relative;aspect-ratio:3/4;overflow:hidden;background:var(--navy)}
-.book-cover img{width:100%;height:100%;object-fit:cover;transition:transform 0.5s}
+.book-cover{position:relative;aspect-ratio:3/4;overflow:hidden;background:var(--navy);perspective:800px}
+.book-cover img{width:100%;height:100%;object-fit:cover;transition:transform 0.4s ease-out;transform-style:preserve-3d;will-change:transform}
 .book-card:hover .book-cover img{transform:scale(1.06)}
+.book-card .cover-placeholder{transition:transform 0.4s ease-out;transform-style:preserve-3d;will-change:transform}
 .book-overlay{
   position:absolute;inset:0;background:linear-gradient(to top,rgba(15,25,35,0.9) 0%,transparent 50%);
   display:flex;align-items:flex-end;justify-content:center;padding:1.2rem;
@@ -440,3 +445,61 @@ footer{background:var(--navy);padding:4rem 2rem 2rem;border-top:1px solid rgba(2
 
 /* ── FORM STATUS ── */
 .form-note-success{color:var(--gold-light);font-size:0.8rem;margin-top:1rem}
+
+/* ── REVIEWS ── */
+.reviews-section{background:#fff}
+.reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.8rem;margin-top:3rem}
+.review-card{
+  background:var(--ivory);border-radius:8px;padding:2rem;
+  box-shadow:0 10px 30px rgba(0,0,0,0.05);
+  transition:transform 0.35s,box-shadow 0.35s;
+}
+.review-card:hover{transform:translateY(-6px);box-shadow:0 20px 46px rgba(0,0,0,0.09)}
+.review-card .stars{font-size:0.9rem;margin-bottom:0.9rem}
+.review-card p{font-family:'Playfair Display',serif;font-style:italic;color:var(--ink);font-size:1rem;line-height:1.75;margin-bottom:1.2rem}
+.review-card span{font-size:0.72rem;color:var(--ink-light);font-weight:600;letter-spacing:0.08em;text-transform:uppercase}
+
+/* ── STATS ── */
+.stats-section{background:var(--navy-mid);padding:5rem 2rem}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;text-align:center}
+.stat-item{display:flex;flex-direction:column;gap:0.5rem}
+.stat-number{font-family:'Playfair Display',serif;font-size:clamp(2.4rem,5vw,3.4rem);font-weight:400;color:var(--gold-light)}
+.stat-label{font-size:0.72rem;color:rgba(255,255,255,0.55);font-weight:600;letter-spacing:0.14em;text-transform:uppercase}
+
+/* ── TIMELINE ── */
+.timeline-section{background:var(--ivory-dark)}
+.timeline{position:relative;max-width:760px;margin:3rem auto 0;padding-left:2.4rem}
+.timeline::before{content:'';position:absolute;top:0.4rem;bottom:0.4rem;left:0.3rem;width:1px;background:rgba(201,168,76,0.35)}
+.timeline-item{position:relative;padding-bottom:2.6rem}
+.timeline-item:last-child{padding-bottom:0}
+.timeline-item::before{
+  content:'';position:absolute;left:-2.4rem;top:0.35rem;width:9px;height:9px;border-radius:50%;
+  background:var(--gold);box-shadow:0 0 0 4px var(--ivory-dark);
+}
+.timeline-year{font-family:'Playfair Display',serif;font-style:italic;color:var(--gold);font-size:1.3rem;margin-bottom:0.4rem}
+.timeline-content h3{font-family:'Playfair Display',serif;font-weight:400;color:var(--navy);font-size:1.2rem;margin-bottom:0.5rem}
+.timeline-content p{color:var(--ink-mid);font-weight:300;line-height:1.8;font-size:0.98rem}
+
+/* ── FAQ (homepage) ── */
+.faq-section{background:#fff}
+.faq-list{max-width:760px;margin:3rem auto 0}
+.faq-item-home{border-bottom:1px solid rgba(0,0,0,0.08)}
+.faq-question{
+  width:100%;display:flex;justify-content:space-between;align-items:center;gap:1rem;
+  background:none;border:none;text-align:left;cursor:pointer;padding:1.4rem 0.2rem;
+  font-family:'Playfair Display',serif;font-size:1.05rem;color:var(--navy);
+}
+.faq-icon{flex-shrink:0;color:var(--gold);font-size:1.3rem;font-family:'Inter',sans-serif;font-weight:300;transition:transform 0.3s}
+.faq-question[aria-expanded="true"] .faq-icon{transform:rotate(45deg)}
+.faq-answer{max-height:0;overflow:hidden;transition:max-height 0.35s ease}
+.faq-answer p{color:var(--ink-mid);font-weight:300;line-height:1.8;font-size:0.96rem;padding:0 0.2rem 1.4rem}
+
+@media(max-width:900px){
+  .reviews-grid{grid-template-columns:1fr}
+  .stats-grid{grid-template-columns:repeat(2,1fr);row-gap:2.5rem}
+  .timeline{padding-left:2rem}
+}
+@media(prefers-reduced-motion:reduce){
+  .hero-particles{display:none}
+  .btn-gold,.review-card,.book-cover img,.faq-answer{transition:none}
+}
