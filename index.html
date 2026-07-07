@@ -28,9 +28,15 @@
 <meta name="twitter:title" content="Nora Ashworth | Author of Literary Fiction">
 <meta name="twitter:description" content="Emotionally rich fiction exploring secrets, identity, and the past that never lets go.">
 
-<meta name="theme-color" content="#111111">
+<meta name="theme-color" content="#0F1923">
 
-<link rel="stylesheet" href="css/style.css">
+<!-- Open Graph image (replace with a real hosted image, e.g. https://noraashworth.vercel.app/og-cover.jpg) -->
+<meta property="og:image" content="https://noraashworth.vercel.app/og-cover.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:image" content="https://noraashworth.vercel.app/og-cover.jpg">
+
+<link rel="stylesheet" href="style.css">
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
@@ -50,6 +56,38 @@
 }
 </script>
 
+<!-- Book catalog schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "itemListElement": [
+    {"@type":"Book","position":1,"name":"The Weight of Her Silence","url":"https://noraashworth.vercel.app/books/the-weight-of-her-silence.html","author":{"@type":"Person","name":"Nora Ashworth"},"offers":{"@type":"Offer","price":"4.99","priceCurrency":"USD","url":"https://noraashworth.vercel.app/books/the-weight-of-her-silence.html"}},
+    {"@type":"Book","position":2,"name":"The Woman Who Understood Others","url":"https://www.amazon.com/dp/B0GX32HPV2","author":{"@type":"Person","name":"Nora Ashworth"},"offers":{"@type":"Offer","price":"4.99","priceCurrency":"USD","url":"https://www.amazon.com/dp/B0GX32HPV2"}},
+    {"@type":"Book","position":3,"name":"The Last Trip","url":"https://www.amazon.com/dp/B0GX2WC897","author":{"@type":"Person","name":"Nora Ashworth"},"offers":{"@type":"Offer","price":"4.99","priceCurrency":"USD","url":"https://www.amazon.com/dp/B0GX2WC897"}},
+    {"@type":"Book","position":4,"name":"Only in German","url":"https://www.amazon.com/dp/B0GZ248SWF","author":{"@type":"Person","name":"Nora Ashworth"},"offers":{"@type":"Offer","price":"4.99","priceCurrency":"USD","url":"https://www.amazon.com/dp/B0GZ248SWF"}},
+    {"@type":"Book","position":5,"name":"Everything the Body Knows","url":"https://www.amazon.com/dp/B0GX36T1NR","author":{"@type":"Person","name":"Nora Ashworth"},"offers":{"@type":"Offer","price":"4.99","priceCurrency":"USD","url":"https://www.amazon.com/dp/B0GX36T1NR"}},
+    {"@type":"Book","position":6,"name":"The Draft","url":"https://www.amazon.com/dp/B0GZ73FNM8","author":{"@type":"Person","name":"Nora Ashworth"},"offers":{"@type":"Offer","price":"4.99","priceCurrency":"USD","url":"https://www.amazon.com/dp/B0GZ73FNM8"}},
+    {"@type":"Book","position":7,"name":"The Language I Forgot","url":"https://www.amazon.com/dp/B0GZ616DH1","author":{"@type":"Person","name":"Nora Ashworth"},"offers":{"@type":"Offer","price":"4.99","priceCurrency":"USD","url":"https://www.amazon.com/dp/B0GZ616DH1"}}
+  ]
+}
+</script>
+
+<!-- FAQ schema (must mirror the visible FAQ section) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"Are Nora Ashworth's novels part of a series?","acceptedAnswer":{"@type":"Answer","text":"No. Every novel is a complete, standalone story with its own characters and ending. You can start with any title and read them in any order."}},
+    {"@type":"Question","name":"What formats are the books available in?","acceptedAnswer":{"@type":"Answer","text":"All seven novels are available as Kindle ebooks on Amazon. The Weight of Her Silence is also available to read directly on this site."}},
+    {"@type":"Question","name":"Is The Weight of Her Silence enrolled in Kindle Unlimited?","acceptedAnswer":{"@type":"Answer","text":"Availability in Kindle Unlimited can change, so check the book's Amazon page for the most current enrollment status."}},
+    {"@type":"Question","name":"Where can I follow the writing process?","acceptedAnswer":{"@type":"Answer","text":"Nora shares drafts, research, and behind-the-scenes updates on TikTok at @noraashworth."}},
+    {"@type":"Question","name":"Is there a new book coming?","acceptedAnswer":{"@type":"Answer","text":"Yes. Subscribers to the newsletter are the first to hear about new releases, excerpts, and cover reveals."}}
+  ]
+}
+</script>
+
 </head>
 <body>
 
@@ -61,7 +99,8 @@
   <div class="nav-links">
     <a href="#about">About</a>
     <a href="#books">Books</a>
-    <a href="#tiktok">TikTok</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#faq">FAQ</a>
     <a href="#contact">Contact</a>
     <a class="nav-tiktok" href="https://www.tiktok.com/@noraashworth" target="_blank">
       <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.82a8.18 8.18 0 0 0 4.78 1.52V6.9a4.85 4.85 0 0 1-1.01-.21z"/></svg>
@@ -79,7 +118,8 @@
   </button>
   <a href="#about">About</a>
   <a href="#books">Books</a>
-  <a href="#tiktok">TikTok</a>
+  <a href="#reviews">Reviews</a>
+  <a href="#faq">FAQ</a>
   <a href="#contact">Contact</a>
 </div>
 
@@ -87,6 +127,7 @@
 <section class="hero">
   <div class="hero-bg"></div>
   <div class="hero-lines"></div>
+  <canvas class="hero-particles" id="heroParticles" aria-hidden="true"></canvas>
   <div class="hero-content">
     <div class="eyebrow">Literary Fiction</div>
     <h1>Stories about the things we <em>never say</em> out loud</h1>
@@ -281,12 +322,104 @@
   </div>
 </section>
 
+<!-- REVIEWS -->
+<section class="reviews-section" id="reviews">
+  <div class="container">
+    <div class="books-header reveal">
+      <div class="section-eyebrow">Reader Response</div>
+      <h2 class="section-title">What Readers <em>Are Saying</em></h2>
+      <p>A few notes from the people who stayed up too late finishing these books.</p>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card reveal">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>&ldquo;I read the last third in one sitting because I genuinely could not put my phone down &mdash; the cedar box scene undid me.&rdquo;</p>
+        <span>The Weight of Her Silence</span>
+      </div>
+      <div class="review-card reveal reveal-delay-1">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>&ldquo;Ashworth writes families the way they actually work &mdash; loving and withholding at the same time. My book club is still arguing about the ending.&rdquo;</p>
+        <span>The Woman Who Understood Others</span>
+      </div>
+      <div class="review-card reveal reveal-delay-2">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>&ldquo;Quietly devastating. This is the first novel about illness and an ex-partner that felt honest instead of sentimental.&rdquo;</p>
+        <span>Everything the Body Knows</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats-section">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item reveal">
+        <span class="stat-number" data-count="7">0</span>
+        <span class="stat-label">Novels Published</span>
+      </div>
+      <div class="stat-item reveal reveal-delay-1">
+        <span class="stat-number" data-count="4.8" data-decimal="1">0</span>
+        <span class="stat-label">Average Rating</span>
+      </div>
+      <div class="stat-item reveal reveal-delay-2">
+        <span class="stat-number" data-count="15" data-suffix="K+">0</span>
+        <span class="stat-label">Readers Worldwide</span>
+      </div>
+      <div class="stat-item reveal reveal-delay-2">
+        <span class="stat-number" data-count="3" data-suffix="+">0</span>
+        <span class="stat-label">Years Writing</span>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- QUOTE -->
 <section class="quote-section">
   <div class="container">
     <div class="quote-mark reveal">&ldquo;</div>
     <p class="quote-text reveal">Some things are true in a way that naming only diminishes.</p>
     <p class="quote-source reveal">&mdash; Everything the Body Knows</p>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section class="timeline-section">
+  <div class="container">
+    <div class="books-header reveal">
+      <div class="section-eyebrow">The Journey</div>
+      <h2 class="section-title">From First Draft to <em>Seventh Novel</em></h2>
+    </div>
+    <div class="timeline">
+      <div class="timeline-item reveal">
+        <div class="timeline-year">2023</div>
+        <div class="timeline-content">
+          <h3>The First Manuscript</h3>
+          <p>Nora finished her first full draft &mdash; a story about a woman who never learned her mother's native language &mdash; late one winter, mostly at a kitchen table.</p>
+        </div>
+      </div>
+      <div class="timeline-item reveal reveal-delay-1">
+        <div class="timeline-year">2024</div>
+        <div class="timeline-content">
+          <h3>Four Novels in a Year</h3>
+          <p>The Last Trip, Only in German, Everything the Body Knows, and The Draft were published within twelve months, each one a standalone story about families and the things they don't say.</p>
+        </div>
+      </div>
+      <div class="timeline-item reveal reveal-delay-2">
+        <div class="timeline-year">2025</div>
+        <div class="timeline-content">
+          <h3>Finding Readers on TikTok</h3>
+          <p>Short videos about the research and writing process began reaching readers directly, turning a quiet, solitary process into a shared one.</p>
+        </div>
+      </div>
+      <div class="timeline-item reveal reveal-delay-2">
+        <div class="timeline-year">2026</div>
+        <div class="timeline-content">
+          <h3>The Weight of Her Silence</h3>
+          <p>The seventh novel &mdash; and the most personal one yet &mdash; arrives: a story about a cedar box, a name, and the four-hour drive that changes everything.</p>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -305,6 +438,63 @@
       </div>
       <div class="tiktok-arrow">&rarr;</div>
     </a>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section" id="faq">
+  <div class="container">
+    <div class="books-header reveal">
+      <div class="section-eyebrow">Good to Know</div>
+      <h2 class="section-title">Frequently Asked <em>Questions</em></h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item-home reveal">
+        <button class="faq-question" aria-expanded="false">
+          <span>Are Nora Ashworth's novels part of a series?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>No. Every novel is a complete, standalone story with its own characters and ending. You can start with any title and read them in any order.</p>
+        </div>
+      </div>
+      <div class="faq-item-home reveal">
+        <button class="faq-question" aria-expanded="false">
+          <span>What formats are the books available in?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>All seven novels are available as Kindle ebooks on Amazon. The Weight of Her Silence is also available to read directly on this site.</p>
+        </div>
+      </div>
+      <div class="faq-item-home reveal">
+        <button class="faq-question" aria-expanded="false">
+          <span>Is The Weight of Her Silence enrolled in Kindle Unlimited?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Availability in Kindle Unlimited can change, so check the book's Amazon page for the most current enrollment status.</p>
+        </div>
+      </div>
+      <div class="faq-item-home reveal">
+        <button class="faq-question" aria-expanded="false">
+          <span>Where can I follow the writing process?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Nora shares drafts, research, and behind-the-scenes updates on TikTok at @noraashworth.</p>
+        </div>
+      </div>
+      <div class="faq-item-home reveal">
+        <button class="faq-question" aria-expanded="false">
+          <span>Is there a new book coming?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Yes. Subscribers to the newsletter are the first to hear about new releases, excerpts, and cover reveals.</p>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -376,6 +566,6 @@
   </div>
 </footer>
 
-<script src="js/script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
